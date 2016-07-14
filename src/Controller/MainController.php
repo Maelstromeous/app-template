@@ -22,7 +22,7 @@ class MainController implements TemplateAwareInterface
     public function index(ServerRequestInterface $request, ResponseInterface $response)
     {
         $response->getBody()->write(
-            $this->getTemplateDriver()->render('hello.html')
+            $this->getTemplateDriver()->render('landing.html')
         );
     }
 

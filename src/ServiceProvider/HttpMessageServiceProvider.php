@@ -7,6 +7,9 @@ use Zend\Diactoros\ServerRequestFactory;
 
 class HttpMessageServiceProvider extends AbstractServiceProvider
 {
+    /**
+     * @var array
+     */
     protected $provides = [
         'Zend\Diactoros\Response',
         'Zend\Diactoros\Response\SapiEmitter',
@@ -25,7 +28,9 @@ class HttpMessageServiceProvider extends AbstractServiceProvider
         $this->getContainer()->share('Zend\Diactoros\ServerRequest', function () {
             $config = $this->getContainer()->get('config');
 
-            $_SERVER['REQUEST_URI'] = str_replace('/app-template/public', '', $_SERVER['REQUEST_URI']);
+            if ($config['environment'] === 'development') {
+                $_SERVER['REQUEST_URI'] = str_replace('/app-template/public', '', $_SERVER['REQUEST_URI']);
+            }
 
             return ServerRequestFactory::fromGlobals();
         });
