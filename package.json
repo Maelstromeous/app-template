@@ -1,0 +1,26 @@
+{
+  "name": "mattcavanagh-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Maelstrome26@github.com/Maelstrome26/app-template.git"
+  },
+  "author": "Matt Cavanagh <maelstrome26@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maelstrome26/app-template/issues"
+  },
+  "homepage": "https://github.com/Maelstrome26/app-template#readme",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
