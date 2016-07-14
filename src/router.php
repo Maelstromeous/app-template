@@ -8,7 +8,6 @@ $router = new RouteCollection(
     isset($container) && $container instanceof ContainerInterface ? $container : new Container
 );
 
-$router->get('/', 'Maelstrome26\Template\Controller\MainController::helloWorld');
-$router->get('/test', 'Maelstrome26\Template\Controller\MainController::testRoute');
+$router->get('/', 'Maelstrome26\Template\Controller\MainController::index');
 
 return $router;

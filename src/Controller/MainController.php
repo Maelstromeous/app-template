@@ -2,14 +2,14 @@
 
 namespace Maelstrome26\Template\Controller;
 
-use Maelstrome26\Template\Contract\ConfigAwareInterface;
-use Maelstrome26\Template\Contract\ConfigAwareTrait;
+use Maelstrome26\Template\Contract\TemplateAwareInterface;
+use Maelstrome26\Template\Contract\TemplateAwareTrait;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class MainController implements ConfigAwareInterface
+class MainController implements TemplateAwareInterface
 {
-    use ConfigAwareTrait;
+    use TemplateAwareTrait;
 
     /**
      * Hello world!
@@ -19,12 +19,10 @@ class MainController implements ConfigAwareInterface
      *
      * @return Psr\Http\Message\ResponseInterface
      */
-    public function helloWorld(ServerRequestInterface $request, ResponseInterface $response)
+    public function index(ServerRequestInterface $request, ResponseInterface $response)
     {
-        $config = $this->getConfig();
-
         $response->getBody()->write(
-            $config['base_url']
+            $this->getTemplateDriver()->render('hello.html')
         );
     }
 
