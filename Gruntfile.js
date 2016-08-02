@@ -38,7 +38,8 @@ module.exports = function(grunt) {
                 files: ['public/assets/less/**/*.less'],
                 tasks: ['css'],
                 options: {
-                    nospawn: true
+                    nospawn: true,
+                    atBegin: true
                 }
             }
         }
